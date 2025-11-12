@@ -1,0 +1,36 @@
+# Airflow
+logs/
+airflow.db
+airflow.cfg
+webserver_config.py
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environments
+.env
+.venv
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# GCP Credentials 
+*.json
+*.key
+*.p12
+service-account*.json
+keyfile.json
+credentials.json
+
+# Docker 
+docker-compose.override.yml
