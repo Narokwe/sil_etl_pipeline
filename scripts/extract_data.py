@@ -75,9 +75,8 @@ def fetch_data_with_fallback(api_url, data_type, last_run_timestamp):
             data = response.json()
             
             # Since dummyjson doesn't support true incremental, we simulate it
-            # In production, you'd add query parameters like: ?updatedSince=timestamp
             print(f" Note: DummyJSON doesn't support incremental APIs")
-            print(f" In production, you'd filter by updatedAt > {last_run_timestamp}")
+            print(f" In production, i'll filter by updatedAt > {last_run_timestamp}")
         
         record_count = len(data.get(data_type, []))
         print(f" Fetched {record_count} {data_type} records")
@@ -176,9 +175,9 @@ def extract_all_data():
             
             print(f"{data_type} extraction completed: {record_count} records")
             if is_first_run:
-                print(f"   🆕 FIRST RUN - loaded all data as baseline")
+                print(f"FIRST RUN - loaded all data as baseline")
             else:
-                print(f"   🔄 INCREMENTAL - loaded data since {last_run_timestamp}")
+                print(f"INCREMENTAL - loaded data since {last_run_timestamp}")
             
         except Exception as e:
             print(f"Failed to extract {data_type} data: {e}")
